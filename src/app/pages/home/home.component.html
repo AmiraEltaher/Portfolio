@@ -1,3 +1,27 @@
-<p>home works!</p>
+<!-- <section>
+  <h1>Hello, I'm {{ name }}</h1>
+  <h2>{{ title }}</h2>
+  <p>{{ description }}</p>
+  <button>Download CV</button>
+   <button>Contact Me</button>
+</section> -->
+<section class="hero container">
+  <p class="hero__eyebrow">{{ title }}</p>
+
+  <h1 class="hero__name">Hello, I'm {{ name }}</h1>
+
+  <svg class="hero__swash" width="180" height="10" viewBox="0 0 180 10" aria-hidden="true">
+    <path d="M2,6 Q45,1 90,6 T178,5" stroke-linecap="round"/>
+  </svg>
+
+  <h2 class="hero__tagline">{{ description }}</h2>
+
+  <div class="hero__actions">
+    <button class="btn btn-rose">Download CV</button>
+    <button class="btn btn-outline-gold">Contact Me</button>
+  </div>
+
+  <div class="hero__monogram" aria-hidden="true">{{ initials }}</div>
+</section>
 
 <app-skill-card *ngFor ="let skill of skills" [skillName] = "skill"></app-skill-card>

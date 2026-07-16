@@ -1,2 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
 @import "bootstrap/dist/css/bootstrap.min.css";
+
+
+:root {
+  --color-bg: #FBF7F4;      /* ivory background*/
+  --color-text: #3D2B3D;      /* deep plum*/
+  --color-muted: #8A7A80;     /* taupe, secondary text*/
+  --color-body: #6E6069;      /* body copy*/
+  --color-rose: #C97B84;      /* primary accent*/
+  --color-gold: #C9A227;      /* secondary accent*/
+
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Jost', sans-serif;
+
+  --radius-pill: 24px;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-weight: 300;
+}

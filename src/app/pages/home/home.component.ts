@@ -7,10 +7,17 @@ import { FormsModule } from '@angular/forms';
   standalone: true,
   imports: [SkillCardComponent,NgFor,FormsModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-skills = [
+  // hero section
+  name = "Amira";
+  title ="Full Stack Developer";
+  description = "Passionate about building modern web applications using Laravel and Angular.";
+ initials ="AE";
+
+// skills
+  skills = [
   'Angular',
   'React',
   'Laravel',
