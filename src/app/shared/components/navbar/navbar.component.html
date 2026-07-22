@@ -1,42 +1,30 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" [routerLink]="['/']" >Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar">
+  <div class="navbar__container container">
+    <a class="navbar__brand"  routerLink="">{{ name }}</a>
+
+    <button
+      class="navbar__toggle"
+      [class.navbar__toggle--open]="isMenuOpen"
+      (click)="isMenuOpen = !isMenuOpen"
+      aria-label="Toggle navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" [routerLink]="['/']">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/projects']" routerLinkActive="active">Projects</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/contact']">Contact</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/about']">About</a>
-        </li>
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" [routerLink]="['/']">Home</a></li>
-            <li><a class="dropdown-item" href="#">Projects</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li> -->
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
+    <div class="navbar__menu" [class.navbar__menu--open]="isMenuOpen">
+      <a class="navbar__link" routerLinkActive="navbar__link--active" routerLink=""         (click)="isMenuOpen = false"   [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a class="navbar__link" routerLinkActive="navbar__link--active" routerLink="about"    (click)="isMenuOpen = false">About</a>
+      <a class="navbar__link" routerLinkActive="navbar__link--active" routerLink="projects" (click)="isMenuOpen = false">Projects</a>
+      <a class="navbar__link" routerLinkActive="navbar__link--active" routerLink="contact"  (click)="isMenuOpen = false">Contact</a>
+      <a
+  href="https://mail.google.com/mail/?view=cm&fs=1&to=amiraeltaher2020@gmail.com"
+  target="_blank"
+  class="btn btn-rose navbar__cta">
+  Get in Touch
+</a>
+      <!-- <a   [href]="'mailto:' + email+ '?subject=Portfolio Inquiry'" class="btn btn-rose navbar__cta">Get in Touch</a> -->
     </div>
   </div>
 </nav>

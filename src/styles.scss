@@ -22,3 +22,27 @@ body {
   font-family: var(--font-body);
   font-weight: 300;
 }
+
+.btn {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.btn-rose {
+  background: var(--color-rose);
+  color: var(--color-bg);
+  font-weight: 500;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

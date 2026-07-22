@@ -6,8 +6,11 @@ import { RouterLink , RouterLinkActive} from '@angular/router';
   standalone: true,
   imports: [RouterLink,RouterLinkActive],
   templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
+  styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
+  isMenuOpen = false;
+  name = 'Amira Eltaher';
+  email= 'amiraeltaher2020@gmail.com';
 
 }

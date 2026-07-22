@@ -1,0 +1,123 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--color-bg);
+  border-bottom: 1px solid rgba(61, 43, 51, 0.08);
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 1.5rem;
+  }
+
+  &__brand {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  &__toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 24px;
+    height: 18px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 110;
+
+    span {
+      display: block;
+      height: 2px;
+      width: 100%;
+      background: var(--color-text);
+      border-radius: 2px;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    &--open {
+      span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+      span:nth-child(2) {
+        opacity: 0;
+      }
+      span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 2.2rem;
+  }
+
+  &__link {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--color-muted);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s ease, border-color 0.2s ease;
+
+    &:hover {
+      color: var(--color-text);
+    }
+
+    &--active {
+      color: var(--color-text);
+      border-bottom-color: var(--color-rose);
+    }
+  }
+
+  &__cta {
+    padding: 9px 22px;
+    font-size: 12.5px;
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .navbar {
+    &__toggle {
+      display: flex;
+    }
+
+    &__menu {
+      position: fixed;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: 260px;
+      background: var(--color-bg);
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 1.75rem;
+      padding: 2rem;
+      transform: translateX(100%);
+      transition: transform 0.3s ease;
+      box-shadow: -4px 0 20px rgba(61, 43, 51, 0.08);
+
+      &--open {
+        transform: translateX(0);
+      }
+    }
+
+    &__cta {
+      margin-top: 0.5rem;
+    }
+  }
+}
