@@ -5,8 +5,17 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.css'
+  styleUrl: './footer.component.scss'
 })
 export class FooterComponent {
+name = 'Amira Eltaher';
+  title = 'Full-stack Developer';
+  email = 'amiraeltaher2020@gmail.com';
+  githubHandle = '/AmiraEltaher';
+  linkedinHandle = '/amira-eltaher-144b30114/';
+  currentYear = new Date().getFullYear();
 
+  scrollToTop(): void {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 }

@@ -1,1 +1,30 @@
-<p>footer works!</p>
+<footer class="footer">
+  <div class="footer__container container">
+    <div class="footer__brand">{{ name }}</div>
+    <div class="footer__title">{{ title }}</div>
+
+    <div class="footer__socials">
+      <a class="footer__social" href="https://github.com/{{ githubHandle }}" target="_blank" rel="noopener" aria-label="GitHub">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.25c0 4.53 2.87 8.37 6.84 9.73.5.1.68-.22.68-.49 0-.24-.01-1.03-.01-1.87-2.78.62-3.37-1.21-3.37-1.21-.46-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.29 9.29 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.26 10.26 0 0 0 22 12.25C22 6.58 17.52 2 12 2z"/></svg>
+      </a>
+      <a class="footer__social" href="https://linkedin.com/in/{{ linkedinHandle }}" target="_blank" rel="noopener" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8.5h4V23h-4V8.5zM8.5 8.5h3.83v1.98h.05c.53-1 1.84-2.06 3.79-2.06 4.06 0 4.81 2.67 4.81 6.14V23h-4v-6.6c0-1.57-.03-3.6-2.2-3.6-2.2 0-2.54 1.72-2.54 3.49V23h-4V8.5z"/></svg>
+      </a>
+      <a class="footer__social" href="https://mail.google.com/mail/?view=cm&fs=1&to=amiraeltaher2020@gmail.com" target="_blank" aria-label="Email">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm-.4 4.25-7.1 4.44a1 1 0 0 1-1 0L4.4 8.25a.75.75 0 1 1 .8-1.27L12 11.2l6.8-4.22a.75.75 0 1 1 .8 1.27z"/></svg>
+      </a>
+    </div>
+
+    <a class="footer__email" href="https://mail.google.com/mail/?view=cm&fs=1&to=amiraeltaher2020@gmail.com" target="_blank">{{ email }}</a>
+
+    <div class="footer__divider"></div>
+
+    <div class="footer__bottom">
+      <span>&copy; {{ currentYear }} {{ name }}. All rights reserved.</span>
+    </div>
+
+    <button class="footer__top" (click)="scrollToTop()">
+      ↑ Back to top
+    </button>
+  </div>
+</footer>
