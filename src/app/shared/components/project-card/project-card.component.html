@@ -1,0 +1,21 @@
+<!-- <h1>{{project.title}}</h1>
+<p>{{project.description}}</p>
+<img [src]="project.image" alt="project.title">
+<a [href]="project.githubLink">GitHub</a>
+<a [href]="project.liveDemo">Live Demo</a> -->
+
+<div class="project-card">
+  <div class="project-card__image-wrap">
+    <img class="project-card__image" [src]="project.image" [alt]="project.title" />
+  </div>
+  <h3 class="project-card__title">{{ project.title }}</h3>
+  <p class="project-card__description">{{ project.description }}</p>
+
+  <div class="project-card__links">
+    <a class="btn btn-rose" [href]="project.liveDemo" target="_blank" rel="noopener">Live Demo</a>
+    <a class="btn btn-outline-gold" [href]="project.githubLink" target="_blank" rel="noopener">GitHub</a>
+  </div>
+   <a class="project-card__details" [routerLink]="['/projects', project.id]">
+    Details <span aria-hidden="true">&rarr;</span>
+  </a>
+</div>
