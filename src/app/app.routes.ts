@@ -4,10 +4,11 @@ import { HomeComponent } from './pages/home/home.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProjectsComponent } from './pages/projects/projects.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { ProjectDetailsComponent } from './pages/project-details/project-details.component';
 
 export const routes: Routes = [
     {
-    path : '',
+    path : '',   
     component: HomeComponent
 
   },
@@ -25,4 +26,10 @@ export const routes: Routes = [
     component: ContactComponent
 
   },
+    {
+    path : 'projects/:id',
+    component: ProjectDetailsComponent
+
+  },
+
 ];
