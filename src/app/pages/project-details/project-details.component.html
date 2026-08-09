@@ -1,5 +1,42 @@
-<div *ngIf="selectedProject ">
-  <h1>{{selectedProject.title}}</h1>
-  <p>{{selectedProject.description}}</p>
-  <img [src]="selectedProject.image" alt="">
-</div>
+<section class="project-details container" *ngIf="selectedProject; else notFound">
+  <a class="project-details__back" routerLink="/projects">
+    <span aria-hidden="true">&larr;</span> Back to projects
+  </a>
+
+  <div class="project-details__tags" *ngIf="selectedProject.technologies?.length">
+    <span *ngFor="let tech of selectedProject.technologies; let last = last">
+      {{ tech }}<span *ngIf="!last">&nbsp;&middot;&nbsp;</span>
+    </span>
+  </div>
+
+  <h1 class="project-details__title">{{ selectedProject.title }}</h1>
+
+  <div class="project-details__image-wrap">
+    <img
+      class="project-details__image"
+      [src]="selectedProject.image"
+      [alt]="selectedProject.title"
+    />
+  </div>
+
+  <div class="project-details__links">
+
+    <a  class="btn btn-outline-gold"
+      [href]="selectedProject.githubLink"
+      target="_blank"
+      rel="noopener"
+    >GitHub</a>
+  </div>
+
+  <h2 class="project-details__heading">Overview</h2>
+  <p class="project-details__text">{{ selectedProject.description }}</p>
+</section>
+
+<ng-template #notFound>
+  <div class="project-details__empty container">
+    <p>Project not found.</p>
+    <a class="project-details__back" routerLink="/projects">
+      <span aria-hidden="true">&larr;</span> Back to projects
+    </a>
+  </div>
+</ng-template>

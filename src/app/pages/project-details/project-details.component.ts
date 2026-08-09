@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { RouterLink,ActivatedRoute } from '@angular/router';
 import { Project } from '../../models/project';
-import { NgIf } from '@angular/common';
+import { NgIf , NgFor} from '@angular/common';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [NgIf],
+  imports: [RouterLink,NgIf,NgFor],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss',
 })
