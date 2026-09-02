@@ -1,4 +1,51 @@
-<form action="" [formGroup]="contactForm"  (ngSubmit)="onSubmit()">
+<section class="contact-section">
+  <p class="eyebrow">Contact</p>
+  <h1 class="contact-title">Get in Touch</h1>
+  <p class="contact-subtitle">Have a project in mind? I'd love to hear about it.</p>
+
+  <form action="" [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="contact-form">
+
+    <div class="field">
+      <label for="name">Name</label>
+      <input type="text" id="name" formControlName="name" placeholder="Your name">
+      @if (contactForm.get('name')?.invalid && contactForm.get('name')?.touched) {
+        @if (contactForm.get('name')?.hasError('required')) {
+          <span class="field-error">Name is required</span>
+        }
+      }
+    </div>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input type="text" id="email" formControlName="email" placeholder="you@example.com">
+      @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
+        @if (contactForm.get('email')?.hasError('required')) {
+          <span class="field-error">Email is required</span>
+        }
+        @if (contactForm.get('email')?.hasError('email')) {
+          <span class="field-error">Please enter a valid email</span>
+        }
+      }
+    </div>
+
+    <div class="field">
+      <label for="message">Message</label>
+      <textarea id="message" formControlName="message" rows="5" placeholder="Tell me about your project"></textarea>
+      @if (contactForm.get('message')?.invalid && contactForm.get('message')?.touched) {
+        @if (contactForm.get('message')?.hasError('required')) {
+          <span class="field-error">Message is required</span>
+        }
+      }
+    </div>
+
+    <button type="submit" class="btn-send">Send Message</button>
+  </form>
+
+  @if (isSubmitted) {
+    <div class="success-banner">Thank you! Your message has been sent successfully.</div>
+  }
+</section>
+<!-- <form action="" [formGroup]="contactForm"  (ngSubmit)="onSubmit()">
     <input type="text" name="" id=""  formControlName="name">
     @if(contactForm.get('name')?.invalid && contactForm.get('name')?.touched){
       @if(contactForm.get('name')?.hasError('required')){
@@ -29,4 +76,4 @@
 
 @if(isSubmitted){
   <div> Thank you! Your message has been sent successfully.</div>
-}
+} -->

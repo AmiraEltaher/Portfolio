@@ -26,7 +26,7 @@ export class ContactComponent {
     if (this.contactForm.valid){
             console.log(this.contactForm.value);
             this.isSubmitted =true;
-            this.contactForm.reset({emitEvent:false});
+            // this.contactForm.reset({emitEvent:false});
 
     }
     else{
