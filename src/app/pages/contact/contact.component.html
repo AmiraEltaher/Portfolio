@@ -1,1 +1,32 @@
-<p>contact works!</p>
+<form action="" [formGroup]="contactForm"  (ngSubmit)="onSubmit()">
+    <input type="text" name="" id=""  formControlName="name">
+    @if(contactForm.get('name')?.invalid && contactForm.get('name')?.touched){
+      @if(contactForm.get('name')?.hasError('required')){
+           <div>Name is required</div>
+      }
+
+    }
+    <input type="text" name="" id=""  formControlName="email">
+      @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched ) {
+      @if (contactForm.get('email')?.hasError('required')){
+                <div>Email is required</div>
+      }
+      @if (contactForm.get('email')?.hasError('email')){
+                <div>Please enter a valid email</div>
+      }
+
+    }
+    <input type="text" name="" id=""  formControlName="message">
+     @if(contactForm.get('message')?.invalid && contactForm.get('message')?.touched){
+      @if(contactForm.get('message')?.hasError('required')){
+          <div> Message is required</div>
+      }
+
+     }
+      <button type="submit">Send</button>
+</form>
+
+
+@if(isSubmitted){
+  <div> Thank you! Your message has been sent successfully.</div>
+}
